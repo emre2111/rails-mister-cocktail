@@ -1,0 +1,36 @@
+<!-- Here goes the banner -->
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "bar.jpg" %>);">
+  <div class="container">
+    <h1>Cocktails</h1>
+  </div>
+</div>
+
+<!-- Here go cards -->
+
+<div class=“container”>
+  <% @cocktails.each do |r| %>
+  <div class=“col-xs-12 col-sm-4 col-md-3">
+    <%= link_to cocktail_path(r.id) do  %>
+    <div class=“card-trip”>
+      <div class=“card-trip-infos”>
+        <div>
+          <%= link_to r.name, cocktail_path(r.id) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+
+<div class=“display-flex”>
+  <%= link_to new_cocktail_path do  %>
+  <div class=“create-button”>Create a new cocktail</div>
+  <% end %>
+</div>
+
+
+
+
